@@ -112,9 +112,9 @@ def select_pokemon():
 def check_guess(pokemon, guess):
     guess = guess.lower()
     if guess == pokemon:
-        return "You guessed it! Congratulations!"
+        return "You guessed it!"
     elif len(guess) != len(pokemon):
-        return "WRONG!"
+        return "Incorrect!"
    
 def hint(guess, pokemon):
     # Check if the guessed Pokémon exists in the dictionary
@@ -127,7 +127,7 @@ def hint(guess, pokemon):
 
     # Check if the guessed Pokémon matches the randomly selected Pokémon
     if guess == pokemon:
-        print("Congratulations! You've guessed the Pokémon correctly:", pokemon)
+        print("You've guessed the Pokémon!:", pokemon)
         return
 
     # Check if the color matches
@@ -149,9 +149,10 @@ def hint(guess, pokemon):
 
 def play_wordle():
     pokemon = select_pokemon()
-    print("Welcome to Pokémon Wordle!")
-    print("Try to guess the name of a Generation 2 Pokémon.")
-    print("You have 6 attempts. Good luck!")
+    print("Welcome to Wordlemon Gen2!")
+    print("-Created by AlexWindex")
+    print("Solve the name of the Gen 2 Pokémon.")
+    print("You have 6 attempts.")
     print("")
 
     attempts = 0
@@ -160,10 +161,10 @@ def play_wordle():
         result = check_guess(pokemon, guess)
         print(result)
         print("")
-        if result != "You guessed it! Congratulations!":
+        if result != "You guessed it!":
             print(hint(pokemon, guess))
         attempts += 1
-        if result == "You guessed it! Congratulations!":
+        if result == "You guessed it!":
             break
     if attempts == 6:
         print(f"Sorry, you didn't guess the Pokémon. It was {pokemon.capitalize()}.")
