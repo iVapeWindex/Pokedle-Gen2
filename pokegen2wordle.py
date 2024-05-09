@@ -118,7 +118,7 @@ def check_guess(pokemon, guess):
         return "Incorrect!"
     
 def hint(guess, pokemon):
-    if guess not in pokemon:
+    if guess not in pokemon_data:
         print("Guess a valid Gen 2 Pokémon.")
         return
     # Check if the guessed Pokémon exists in the dictionary
